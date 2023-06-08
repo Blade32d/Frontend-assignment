@@ -1,0 +1,91 @@
+.container {
+  /* the container that contains 2 sub-containers */
+  margin-top: 3rem;
+  display: flex;
+  width: 100%;
+  height: 20rem;
+}
+
+#container1 {
+  /* conatiner having items to be dropped  */
+  background-color: rgb(42, 41, 41);
+  width: 50%;
+  margin-right: 5%;
+  max-height: 100%;
+  overflow-y: auto;
+  border-radius: 10%;
+  border-bottom: 5px solid #999;
+  border-right: 5px solid #999;
+}
+
+.item {
+  /* items before they are moved to next cointainer*/
+  display: inline-block;
+  margin-top: 3%;
+  padding: 10px;
+  background-color: #999;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  user-select: none;
+}
+
+.item2 {
+  /* items after they are moved */
+  display: inline-block;
+  margin-top: 3%;
+  padding: 10px;
+  background-color: #ed8c8c;
+  border: 1px solid #ccc;
+  margin-right: 0.5%;
+}
+
+#container2 {
+  /* container where items are to be moved  */
+  border: 2px dashed #999;
+  background-color: rgb(105, 183, 174);
+  width: 50%;
+  max-height: 100%;
+  overflow-y: auto;
+  border-radius: 10%;
+  border-bottom: 5px solid #999;
+  border-right: 5px solid #999;
+}
+
+.item.dragging {
+  /* how items look while being moved */
+  opacity: 0.5;
+  background-color: violet;
+}
+
+#message {
+  /* message shown on moving an item from c1 to c2 successfully */
+  color: green;
+  font-weight: bold;
+  margin-top: 10px;
+  height: 2rem;
+  font-size: larger;
+  text-align: center;
+}
+
+.reset-button {
+  /* button to reset everything */
+  margin-top: 20px;
+  border-radius: 10%;
+  width: 5rem;
+  height: 5rem;
+  font-size: larger;
+  background-color: rgb(171, 218, 214);
+}
+
+@media only screen and (max-width: 600px) {
+
+  /* making the site responsive */
+  .container {
+    flex-direction: column;
+  }
+
+  #container2 {
+    /* container2 will disappear so it should have a height */
+    height: 50%;
+  }
+}
